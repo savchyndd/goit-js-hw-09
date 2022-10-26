@@ -35,7 +35,7 @@ const options = {
 btnStartRef.setAttribute('disabled', true);
 
 // Initial flatpickr
-flatpickr(imputDatePickerRef, options);
+flatpickr('#datetime-picker', options);
 
 // Set click event listener on button start
 btnStartRef.addEventListener('click', onBtnStart);
