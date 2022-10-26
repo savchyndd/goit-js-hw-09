@@ -1,12 +1,12 @@
-// Описаний в документації
+// Import library
 import flatpickr from 'flatpickr';
 import convertMs from './dateConvert';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// Додатковий імпорт стилів
+// Import additional css styles
 import 'flatpickr/dist/flatpickr.min.css';
 
-// get element
+// Get element date input, start btn, data: days, hours, min, sec
 let getRef = selector => document.querySelector(selector);
 const imputDatePickerRef = getRef('#datetime-picker');
 const btnStartRef = getRef('[data-start]');
