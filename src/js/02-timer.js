@@ -39,6 +39,20 @@ flatpickr(imputDatePickerRef, options);
 
 // Set click event listener on button start
 btnStartRef.addEventListener('click', onBtnStart);
+// Reset timer on btn
+window.addEventListener('keydown', e => {
+  if (e.code === 'Escape' && timerId) {
+    clearInterval(timerId);
+
+    imputDatePickerRef.removeAttribute('disabled');
+    btnStartRef.setAttribute('disabled', true);
+
+    secondsRef.textContent = '00';
+    minutesRef.textContent = '00';
+    hoursRef.textContent = '00';
+    daysRef.textContent = '00';
+  }
+});
 
 // Start timer
 function onBtnStart() {
