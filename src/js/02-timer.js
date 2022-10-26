@@ -21,7 +21,12 @@ let timerId = null;
 let formatDate = null;
 
 const flatpickr = require('flatpickr');
-let options = {
+const options = {};
+
+btnStartRef.setAttribute('disabled', true);
+
+// Initial flatpickr
+flatpickr(imputDatePickerRef, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -30,12 +35,7 @@ let options = {
     console.log(selectedDates[0]);
     currentDifferenceDate(selectedDates[0]);
   },
-};
-
-btnStartRef.setAttribute('disabled', true);
-
-// Initial flatpickr
-flatpickr(imputDatePickerRef, options);
+});
 
 // Set click event listener on button start
 btnStartRef.addEventListener('click', onBtnStart);
