@@ -21,21 +21,23 @@ let timerId = null;
 let formatDate = null;
 
 const flatpickr = require('flatpickr');
-const options = {
-  enableTime: true,
-  time_24hr: true,
-  defaultDate: new Date(),
-  minuteIncrement: 1,
-  onClose(selectedDates) {
-    console.log(selectedDates[0]);
-    currentDifferenceDate(selectedDates[0]);
-  },
-};
 
 btnStartRef.setAttribute('disabled', true);
 
 // Initial flatpickr
-flatpickr('#datetime-picker', options);
+flatpickr(
+  imputDatePickerRef,
+  (options = {
+    enableTime: true,
+    time_24hr: true,
+    defaultDate: new Date(),
+    minuteIncrement: 1,
+    onClose(selectedDates) {
+      console.log(selectedDates[0]);
+      currentDifferenceDate(selectedDates[0]);
+    },
+  })
+);
 
 // Set click event listener on button start
 btnStartRef.addEventListener('click', onBtnStart);
